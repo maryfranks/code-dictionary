@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 var codeTerms = [
@@ -24,6 +25,8 @@ app.use(function(request, response, next) {
 });
 
 app.use(express.static("./public"));
+
+app.use(cors());
 
 app.get("/dictionary-api", function(request, response) {
 
