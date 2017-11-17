@@ -1,0 +1,27 @@
+{
+  "name": "code-dictionary",
+  "version": "1.0.0",
+  "description": "notes about coding that I want to remember",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryfranks/code-dictionary.git"
+  },
+  "keywords": [
+    "dictionary"
+  ],
+  "author": "Mary Franks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maryfranks/code-dictionary/issues"
+  },
+  "homepage": "https://github.com/maryfranks/code-dictionary#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cores": "^0.8.5",
+    "express": "^4.16.2"
+  }
+}
