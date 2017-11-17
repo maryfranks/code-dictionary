@@ -25,6 +25,12 @@ app.use(function(request, response, next) {
 
 app.use(express.static("./public"));
 
+app.get("/dictionary-api", function(request, response) {
+
+  response.json(codeTerms);
+
+});
+
 app.listen(3000);
 
 console.log("Express app running on port 3000...");
