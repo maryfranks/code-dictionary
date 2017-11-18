@@ -45,6 +45,13 @@ app.post("/dictionary-api", function(request, response) {
 
 });
 
+app.delete("/dictionary-api/:term", function(request, response) {
+  codeTerms = codeTerms.filter(function(definition) {
+    return definition.term.toLowerCase() !== request.params.term.toLowerCase();
+  });
+  response.json(codeTerms);
+});
+
 app.listen(3000);
 
 console.log("Express app running on port 3000...");
