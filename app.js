@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const app = express();
 
 var codeTerms = [
@@ -17,9 +18,12 @@ var codeTerms = [
   },
 ];
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(function(request, response, next) {
 
-  console.log(`${request.method} request for ${request.url}`);
+  console.log(`${request.method} request for ${request.url} - ${JSON.stringify(request.body)}`);
   next();
 
 });
@@ -30,6 +34,13 @@ app.use(cors());
 
 app.get("/dictionary-api", function(request, response) {
 
+  response.json(codeTerms);
+
+});
+
+app.post("/dictionary-api", function(request, response) {
+
+  codeTerms.push(request.body);
   response.json(codeTerms);
 
 });
